@@ -21,20 +21,28 @@ Or from a local clone:
 ## Usage
 
 ```
-/tree <branch-name> [base-branch]
+/tree <branch-name> [base-branch]   create worktree + tmux session
+/tree switch                         switch between open sessions
 ```
 
 | Example | Result |
 |---|---|
-| `/tree feature/auth` | Creates branch `feature/auth` from current HEAD and a worktree at `../feature-auth` |
-| `/tree main` | Creates a worktree for the existing `main` branch |
-| `/tree hotfix/bug main` | Creates branch `hotfix/bug` from `main` and a worktree at `../hotfix-bug` |
+| `/tree feature/auth` | Creates branch `feature/auth` from current HEAD, worktree at `../feature-auth`, tmux session `feature-auth` |
+| `/tree main` | Creates a worktree for the existing `main` branch and a tmux session `main` |
+| `/tree hotfix/bug main` | Creates branch `hotfix/bug` from `main`, worktree at `../hotfix-bug`, tmux session `hotfix-bug` |
+| `/tree switch` | Lists open tmux sessions and switches to the selected one |
 
 ## How it works
 
 - If the branch **already exists**, the worktree checks it out directly.
 - If the branch **does not exist**, it is created from `base-branch` (or current HEAD) before the worktree is added.
 - Worktrees are created as sibling directories of the current repository (`../<branch-name>`).
+- Each worktree gets a **named tmux session** with `claude .` running inside it.
+- `/tree switch` lists all tmux sessions so you can jump between parallel workstreams without leaving the terminal.
+
+## Requirements
+
+- [tmux](https://github.com/tmux/tmux) must be installed and you must be inside a tmux session.
 
 ## License
 
