@@ -1,0 +1,10 @@
+{
+  "name": "claude-tree",
+  "description": "Create git worktrees to work on parallel changes on separate branches",
+  "version": "1.0.0",
+  "author": { "name": "asoto", "email": "sc.tankan@gmail.com" },
+  "license": "MIT",
+  "keywords": ["git", "worktree", "branches", "parallel"],
+  "category": "developer-tools",
+  "commands": ["./commands/"]
+}

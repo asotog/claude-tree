@@ -1,0 +1,20 @@
+{
+  "name": "claude-tree",
+  "owner": { "name": "asoto", "email": "sc.tankan@gmail.com" },
+  "metadata": {
+    "description": "Git worktree management for parallel branch development",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "claude-tree",
+      "source": "./plugins/claude-tree",
+      "description": "Create git worktrees to work on parallel changes on separate branches",
+      "version": "1.0.0",
+      "author": { "name": "asoto" },
+      "license": "MIT",
+      "keywords": ["git", "worktree", "branches", "parallel"],
+      "category": "developer-tools"
+    }
+  ]
+}
